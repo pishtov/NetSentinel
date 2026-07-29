@@ -15,3 +15,6 @@ NetSentinel scans ports to determine which services are listening for incoming c
 
 ### What does it actually mean for a port to be "open" ?
 An open port is a port on which a network service is listening for incoming connection requests.
+
+## What is a socket?
+A socket is an operating system object that represents one end of a network connection and allows a program to send and receive data.
