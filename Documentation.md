@@ -12,3 +12,6 @@ address, it tells the operating system which application or service should recei
 
 ### Why does NetSentinel need ports?
 NetSentinel scans ports to determine which services are listening for incoming connections on a target device. An open port usually indicates that a network service, such as a web server or an SSH server, is available and accepting connections.
+
+### What does it actually mean for a port to be "open" ?
+An open port is a port on which a network service is listening for incoming connection requests.
