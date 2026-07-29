@@ -1,14 +1,14 @@
-### What is an IP address?
+## What is an IP address?
 An IP (Internet Protocol) address is a numerical identifier assigned to a network interface on a device. It allows devices to send and receive network packets, enabling communication over a network.
 
-## Why does NetSentinel need an IP address?
+### Why does NetSentinel need an IP address?
 The scanner must know the address of the target device before it can attempt to connect to a TCP port. 
 If the user provides a hostname (e.g., google.com), it must first be 
 resolved to an IP address through DNS (`Domain Name System`) before a connection can be attempted.
 
-### What is port?
+## What is port?
 A port is a numerical identifier that represents a specific network service or application running on a device. Together with an IP 
 address, it tells the operating system which application or service should receive incoming network traffic.
 
-## Why does NetSentinel need ports?
+### Why does NetSentinel need ports?
 NetSentinel scans ports to determine which services are listening for incoming connections on a target device. An open port usually indicates that a network service, such as a web server or an SSH server, is available and accepting connections.

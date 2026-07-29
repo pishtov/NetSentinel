@@ -16,3 +16,6 @@ A TCP port scanner written in Python.
 - [ ] Banner grabbing
 - [ ] JSON reports
 - [ ] CLI arguments
+
+`Active venv`
+`(.\.venv\Scripts\Activate.ps1)`
