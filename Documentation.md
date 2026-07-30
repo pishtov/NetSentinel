@@ -20,5 +20,4 @@ An open port is a port on which a network service is listening for incoming conn
 A socket is an operating system object that represents one end of a network connection and allows a program to send and receive data.
 
 ### Is NetSentinel a client or a server?
-
 NetSentinel behaves as a client. It initiates TCP connections to a target IP address and port in order to determine whether a service is listening. The target service acts as the server by waiting for and responding to incoming connection requests.
