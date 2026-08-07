@@ -7,5 +7,7 @@ try:
     sock = socket.socket()
     sock.connect((ip, port))
     print(f"Port {port} is OPEN")
-except Exception as e:
-    print(f"Error occurred: {e}")
+except ConnectionRefusedError as CRE:
+    print(f"Port {port} is CLOSED. [Error: {CRE}]")
+finally:
+    sock.close()
