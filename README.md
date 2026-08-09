@@ -10,7 +10,7 @@ A TCP port scanner written in Python.
 
 ## Roadmap
 
-- [ ] Scan TCP ports
+- [●] Scan TCP ports
 - [ ] Custom port ranges
 - [ ] Multithreading
 - [ ] Banner grabbing
