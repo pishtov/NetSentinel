@@ -6,7 +6,7 @@ A TCP port scanner written in Python.
 
 - Learn socket programming
 - Learn network protocols
-- Build a professional cybersecurity portfolio project
+- Know how do ports and IP's work
 
 ## Roadmap
 
