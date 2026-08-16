@@ -39,3 +39,6 @@ A **CLOSED** result means the target actively responded and refused the connecti
 DNS (Domain Name System) is the system that translates human-readable hostnames (like `example.com`) into IP addresses that computers use to route traffic.
 ### What happens if DNS resolution fails?
 If NetSentinel is given a hostname that can't be resolved (e.g., a typo, or a domain that doesn't exist), the underlying socket call raises an `OSError`. NetSentinel catches this and reports it as an error (exit code 3) rather than crashing.
+
+## What do the exit codes mean for scripting?
+NetSentinel's exit codes (`0`, `1`, `2`, `3`) let other scripts or tools check the result of a scan programmatically, without having to parse the printed text output. This is a common convention in command-line tools, where `0` typically means success and any non-zero value indicates some form of failure or exceptional condition.
