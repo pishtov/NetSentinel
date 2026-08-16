@@ -26,3 +26,8 @@ NetSentinel behaves as a client. It initiates TCP connections to a target IP add
 TCP (Transmission Control Protocol) is a connection-oriented protocol used for communication between devices on a network. Before any data can be exchanged, TCP requires a "three-way handshake" between the client and the server to establish a connection.
 ### Why does NetSentinel use TCP?
 NetSentinel uses `SOCK_STREAM`, which tells the operating system to create a TCP socket. By attempting the handshake and checking whether it succeeds, NetSentinel can determine whether a service is actively listening on the target port, without needing to know anything about the service itself.
+
+## What is the three-way handshake?
+The three-way handshake is the process TCP uses to establish a connection: the client sends a SYN packet, the server responds with a SYN-ACK if the port is open, and the client replies with an ACK to complete the connection.
+### How does this relate to `connect_ex()`?
+When NetSentinel calls `connect_ex()`, the operating system attempts this handshake on its behalf. If the handshake completes successfully, `connect_ex()` returns `0` and NetSentinel reports the port as OPEN. If the target actively refuses the connection (commonly because no service is listening), the OS returns a non-zero error code and NetSentinel reports the port as CLOSED.
