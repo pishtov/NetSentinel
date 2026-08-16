@@ -62,6 +62,9 @@ fi
 
 The script opens a TCP socket and attempts to connect to the specified host and port using a 2-second timeout. It uses `socket.connect_ex()`, which returns an error code rather than raising an exception, to determine whether the connection succeeded.
 
+## NOTES / WARNING
+Port scanning, even of a single port, can be flagged by firewalls, intrusion detection systems, or logged by the target as suspicious activity. Only run NetSentinel against hosts and networks you own or have explicit permission to test.
+
 ## Notes
 
 - This tool checks **one host and one port at a time** — it does not scan ranges or multiple hosts.
