@@ -34,3 +34,8 @@ A timeout is the maximum amount of time a program will wait for a response befor
 Not all closed ports respond the same way. Some hosts (or firewalls) silently drop connection attempts instead of refusing them, which means the client would otherwise wait indefinitely for a response that never comes. The timeout ensures NetSentinel doesn't hang forever, at the cost of possibly misreporting a slow-to-respond port as unreachable.
 ### What's the difference between CLOSED and TIMED OUT?
 A **CLOSED** result means the target actively responded and refused the connection, usually meaning no service is listening on that port. A **TIMED OUT** result means no response was received at all within the timeout window, which often points to a firewall silently dropping traffic, network congestion, or an unreachable host, rather than a definitive "closed" answer.
+
+## What is DNS resolution?
+DNS (Domain Name System) is the system that translates human-readable hostnames (like `example.com`) into IP addresses that computers use to route traffic.
+### What happens if DNS resolution fails?
+If NetSentinel is given a hostname that can't be resolved (e.g., a typo, or a domain that doesn't exist), the underlying socket call raises an `OSError`. NetSentinel catches this and reports it as an error (exit code 3) rather than crashing.
