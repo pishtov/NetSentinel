@@ -21,3 +21,8 @@ A socket is an operating system object that represents one end of a network conn
 
 ### Is NetSentinel a client or a server?
 NetSentinel behaves as a client. It initiates TCP connections to a target IP address and port in order to determine whether a service is listening. The target service acts as the server by waiting for and responding to incoming connection requests.
+
+## What is TCP?
+TCP (Transmission Control Protocol) is a connection-oriented protocol used for communication between devices on a network. Before any data can be exchanged, TCP requires a "three-way handshake" between the client and the server to establish a connection.
+### Why does NetSentinel use TCP?
+NetSentinel uses `SOCK_STREAM`, which tells the operating system to create a TCP socket. By attempting the handshake and checking whether it succeeds, NetSentinel can determine whether a service is actively listening on the target port, without needing to know anything about the service itself.
