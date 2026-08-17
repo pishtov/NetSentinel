@@ -10,7 +10,7 @@ A minimal command-line tool to check whether a single TCP port is open on a give
 ## Usage
 
 ```bash
-python port_probe.py [host] [-p PORT]
+python main.py [host] [-p PORT]
 ```
 
 ### Arguments
@@ -24,17 +24,17 @@ python port_probe.py [host] [-p PORT]
 
 Check if port 8080 is open on localhost:
 ```bash
-python port_probe.py
+python main.py
 ```
 
 Check if HTTPS (443) is open on a specific host:
 ```bash
-python port_probe.py example.com -p 443
+python main.py example.com -p 443
 ```
 
 Check a port on a specific IP:
 ```bash
-python port_probe.py 192.168.1.1 -p 22
+python main.py 192.168.1.1 -p 22
 ```
 
 ## Exit Codes
@@ -51,7 +51,7 @@ The script sets its exit code based on the result, so it's easy to use in shell 
 ### Example in a shell script
 
 ```bash
-if python port_probe.py example.com -p 443; then
+if python main.py example.com -p 443; then
     echo "HTTPS is reachable"
 else
     echo "HTTPS is not reachable"
